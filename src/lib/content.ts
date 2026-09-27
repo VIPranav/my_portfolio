@@ -71,10 +71,10 @@ export const getSettings = cache(async () => {
   const defaults = {
     title: site.title as string,
     bio: site.description as string,
-    email: "",
-    github: "",
-    linkedin: "",
-    instagram: "",
+    email: site.email as string,
+    github: site.socials.github as string,
+    linkedin: site.socials.linkedin as string,
+    instagram: site.socials.instagram as string,
     resumeUrl: "/resume.pdf",
   };
   if (!databaseConfigured()) return defaults;
