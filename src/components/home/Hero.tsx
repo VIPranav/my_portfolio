@@ -1,5 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
+import WarpText from "./WarpText";
 import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 const Scene = dynamic(() => import("@/components/three/Scene"), {
@@ -43,9 +44,20 @@ export default function Hero() {
           <span className="status-dot" /> DESIGNER. DEVELOPER. ALWAYS CURIOUS.
         </p>
         <h1>
-          <span>Pranav VP.</span>
-          <br />
-          Design that ships.
+          <WarpText
+            text={"Pranav VP.\nDesign that ships."}
+            color="#f8f5ff"
+            warpStrength={0.08}
+            warpScale={1.7}
+            speed={0.55}
+            pointerInfluence={0.42}
+            pointerStrength={0.38}
+            refraction={0.018}
+            ripple
+            fontSize="clamp(3rem, 10vw, 9rem)"
+            fontWeight={800}
+            style={{ height: "320px" }}
+          />
         </h1>
         <p>
           I connect the creative with the technical.

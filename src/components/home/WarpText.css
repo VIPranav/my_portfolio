@@ -1,0 +1,29 @@
+.warp-text {
+  position: relative;
+  pointer-events: auto;
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: inherit;
+}
+
+.warp-text canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.warp-text-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+.warp-text[data-ready="true"] .warp-text-fallback {
+  visibility: hidden;
+}

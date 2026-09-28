@@ -349,6 +349,7 @@ p {
   opacity: 0.65;
 }
 .hero-copy {
+  width: 100%;
   position: relative;
   z-index: 1;
   padding: 100px 24px 130px;
