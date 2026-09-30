@@ -1,0 +1,48 @@
+.fluid-glass-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+.fluid-glass-filters {
+  position: absolute;
+  pointer-events: none;
+}
+.fluid-glass-lens {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 55%);
+  background:
+    radial-gradient(circle at 28% 22%, rgb(255 255 255 / 24%), transparent 48%),
+    linear-gradient(135deg, rgb(255 255 255 / 8%), rgb(145 174 225 / 5%));
+  -webkit-backdrop-filter: blur(1px) saturate(1.12);
+  backdrop-filter: blur(1px) saturate(1.12);
+  box-shadow:
+    inset 1px 2px 3px rgb(255 255 255 / 60%),
+    inset -1px -2px 4px rgb(30 45 75 / 18%),
+    inset var(--glass-fringe) 0 2px rgb(130 215 255 / 24%),
+    inset calc(-1 * var(--glass-fringe)) 0 2px rgb(225 160 255 / 24%),
+    0 4px 18px rgb(15 25 50 / 12%);
+  transition: opacity 160ms ease;
+  will-change: transform;
+}
+@supports (backdrop-filter: url("#glass")) {
+  .fluid-glass-lens {
+    backdrop-filter: var(--glass-filter) blur(var(--glass-blur)) saturate(1.12);
+  }
+}
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .fluid-glass-overlay {
+    display: none;
+  }
+}
+@media print {
+  .fluid-glass-overlay {
+    display: none;
+  }
+}
