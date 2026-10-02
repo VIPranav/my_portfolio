@@ -173,7 +173,11 @@ const MoltenMetal = ({
         alpha: true,
         premultipliedAlpha: true,
         antialias: false,
-        dpr: Math.min(window.devicePixelRatio || 1, 1),
+        // The soft background needs fewer pixels than foreground content.
+        dpr: Math.min(
+          window.devicePixelRatio || 1,
+          window.matchMedia("(pointer: coarse)").matches ? 0.5 : 0.75,
+        ),
         powerPreference: "low-power",
       });
     } catch {

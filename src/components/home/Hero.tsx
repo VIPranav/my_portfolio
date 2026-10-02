@@ -22,7 +22,7 @@ export default function Hero() {
         </p>
         <h1>
           <WarpText
-            text={"Pranav VP.\nBetween Design & Code"}
+            text="Pranav VP."
             color="#f8f5ff"
             warpStrength={0.08}
             warpScale={1.7}
@@ -33,7 +33,16 @@ export default function Hero() {
             ripple
             fontSize="clamp(3rem, 10vw, 9rem)"
             fontWeight={800}
-            style={{ height: "320px" }}
+            className="hero-name-warp"
+          />
+          <WarpText
+            text="Between Design & Code"
+            color="#f8f5ff"
+            speed={0.55}
+            fontSize="clamp(1.25rem, 3.5vw, 3rem)"
+            fontWeight={600}
+            lineHeight={1.1}
+            className="hero-tagline-warp"
           />
         </h1>
         <p>

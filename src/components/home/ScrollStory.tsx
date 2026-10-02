@@ -1,6 +1,7 @@
 "use client";
 
 import FlowingMenu from "@/components/home/FlowingMenu";
+import WarpText from "@/components/home/WarpText";
 
 const chapters = [
   {
@@ -41,7 +42,18 @@ export default function ScrollStory() {
       <div className="container flowing-skills-heading">
         <div>
           <p className="eyebrow">THE TOOLKIT</p>
-          <h2>Disciplines in motion.</h2>
+          <h2>
+            <WarpText
+              text={"Disciplines\nin motion."}
+              color="#f5f5f7"
+              speed={0.55}
+              fontSize="clamp(2.4rem, 5vw, 5rem)"
+              fontWeight={600}
+              letterSpacing="-0.035em"
+              lineHeight={1.1}
+              className="disciplines-title-warp"
+            />
+          </h2>
         </div>
         <p className="body-copy">
           Development, art, design, video, and 3D are the pieces I use to turn
