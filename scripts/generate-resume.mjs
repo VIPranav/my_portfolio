@@ -24,7 +24,7 @@ const lines = [
   ["Linux development environments and Git workflows.", 11],
   ["", 12],
   ["TOOLKIT", 11],
-  ["Proficient: Adobe Photoshop, Adobe Premiere Pro, Canva.", 11],
+  ["Proficient: Art, Adobe Photoshop, Adobe Premiere Pro, Canva.", 11],
   [
     "Practical: TypeScript, React, Next.js, Tailwind CSS, Git, AI-assisted development.",
     11,

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
+import PageWarpTitle from "@/components/ui/PageWarpTitle";
 import { getSettings } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Contact",
@@ -12,13 +13,10 @@ export default async function Contact() {
     <div className="container page-section contact-layout">
       <div>
         <p className="eyebrow">LET’S CONNECT</p>
-        <h1 className="page-title">
-          Good things
-          <br />
-          start with
-          <br />
-          <span className="muted">a conversation.</span>
-        </h1>
+        <PageWarpTitle
+          text={"Good things\nstart with\na conversation."}
+          className="contact-warp-title"
+        />
         <p className="page-lead">
           Tell me what you’re thinking.
           <br />

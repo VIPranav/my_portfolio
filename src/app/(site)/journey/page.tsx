@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getMilestones } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
+import PageWarpTitle from "@/components/ui/PageWarpTitle";
 export const metadata: Metadata = {
   title: "Journey",
   description: "From school magazines at 16 to building digital products.",
@@ -11,11 +12,7 @@ export default async function Journey() {
   return (
     <div className="container page-section">
       <p className="eyebrow">STILL A WORK IN PROGRESS</p>
-      <h1 className="page-title">
-        A little further.
-        <br />
-        <span className="muted">Every time.</span>
-      </h1>
+      <PageWarpTitle text={"A little further.\nEvery time."} />
       <p className="page-lead">
         The path hasn’t been a straight line.
         <br />

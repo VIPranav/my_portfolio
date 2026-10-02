@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import { Code2, Layers, PenTool, Film } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
+import PageWarpTitle from "@/components/ui/PageWarpTitle";
+
 export const metadata: Metadata = {
   title: "Services",
   description:
     "Web apps, UI/UX, visual design, and video — with design and development working together.",
 };
+
 export default function Services() {
   return (
     <div className="container page-section">
       <p className="eyebrow">HOW I CAN HELP</p>
-      <h1 className="page-title">
-        From “what if”
-        <br />
-        <span className="muted">to “here it is.”</span>
-      </h1>
+      <PageWarpTitle text={"From “what if”\nto “here it is.”"} />
       <p className="page-lead">
         A thoughtful partner for the idea you want to bring to life.
       </p>

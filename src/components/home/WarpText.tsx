@@ -137,6 +137,17 @@ void main() {
 const getFontValue = (value: string | number) =>
   typeof value === "number" ? `${value}px` : value;
 
+const resolveCanvasColor = (
+  ctx: CanvasRenderingContext2D,
+  computedColor: string,
+  fallbackColor: string,
+) => {
+  ctx.fillStyle = fallbackColor;
+  const fallback = ctx.fillStyle;
+  ctx.fillStyle = computedColor || fallbackColor;
+  return typeof ctx.fillStyle === "string" ? ctx.fillStyle : fallback;
+};
+
 const measureLine = (
   ctx: CanvasRenderingContext2D,
   line: string,
@@ -204,6 +215,7 @@ const buildTextCanvas = ({
       typeof props.lineHeight === "number"
         ? String(props.lineHeight)
         : props.lineHeight,
+    color: props.color,
   });
   container.appendChild(probe);
   const computed = window.getComputedStyle(probe);
@@ -226,7 +238,7 @@ const buildTextCanvas = ({
   ctx.clearRect(0, 0, width, height);
   ctx.textAlign = "left";
   ctx.textBaseline = "middle";
-  ctx.fillStyle = props.color;
+  ctx.fillStyle = resolveCanvasColor(ctx, computed.color, props.color);
   ctx.imageSmoothingEnabled = true;
   ctx.imageSmoothingQuality = "high";
 
@@ -375,12 +387,19 @@ const WarpText = ({
     };
     const startTime = performance.now();
 
+    const canvas = document.createElement("canvas");
+    const attributes = {
+      alpha: true,
+      antialias: true,
+      premultipliedAlpha: false,
+    };
+
     try {
+      if (!canvas.getContext("webgl2", attributes)) return undefined;
       renderer = new Renderer({
+        canvas,
         webgl: 2,
-        alpha: true,
-        premultipliedAlpha: false,
-        antialias: true,
+        ...attributes,
         dpr: Math.min(window.devicePixelRatio || 1, 2),
       });
       gl = renderer.gl;
@@ -390,7 +409,6 @@ const WarpText = ({
     }
 
     gl.clearColor(0, 0, 0, 0);
-    const canvas = gl.canvas as HTMLCanvasElement;
     canvas.style.position = "absolute";
     canvas.style.inset = "0";
     canvas.style.width = "100%";
@@ -585,7 +603,6 @@ const WarpText = ({
           if (texture?.texture) gl.deleteTexture(texture.texture);
           geometry?.remove?.();
           program?.remove?.();
-          gl.getExtension("WEBGL_lose_context")?.loseContext();
         } catch (error) {
           void error;
         }

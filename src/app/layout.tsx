@@ -24,7 +24,6 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: { card: "summary_large_image" },
   };
 }
-const themeScript = `(function(){var t='system';try{t=localStorage.getItem('portfolio-theme')||'system'}catch(e){}document.documentElement.dataset.theme=t==='light'||t==='dark'?t:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'})()`;
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -45,7 +44,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

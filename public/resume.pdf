@@ -12,7 +12,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Length 2047 >>
+<< /Length 2052 >>
 stream
 BT /F1 30 Tf 0.12 0.12 0.14 rg 50 780 Td (Pranav VP) Tj ET
 BT /F1 14 Tf 0.12 0.12 0.14 rg 50 738 Td (Design & development) Tj ET
@@ -28,7 +28,7 @@ BT /F1 11 Tf 0.12 0.12 0.14 rg 50 531 Td (AI-assisted workflows across backends,
 BT /F1 11 Tf 0.12 0.12 0.14 rg 50 508 Td (Linux development environments and Git workflows.) Tj ET
 BT /F1 12 Tf 0.12 0.12 0.14 rg 50 485 Td () Tj ET
 BT /F1 11 Tf 0.12 0.12 0.14 rg 50 462 Td (TOOLKIT) Tj ET
-BT /F1 11 Tf 0.12 0.12 0.14 rg 50 439 Td (Proficient: Adobe Photoshop, Adobe Premiere Pro, Canva.) Tj ET
+BT /F1 11 Tf 0.12 0.12 0.14 rg 50 439 Td (Proficient: Art, Adobe Photoshop, Adobe Premiere Pro, Canva.) Tj ET
 BT /F1 11 Tf 0.12 0.12 0.14 rg 50 416 Td (Practical: TypeScript, React, Next.js, Tailwind CSS, Git, AI-assisted development.) Tj ET
 BT /F1 11 Tf 0.12 0.12 0.14 rg 50 393 Td (Foundational: Figma, Illustrator, Lightroom, Autodesk Maya, Python,) Tj ET
 BT /F1 11 Tf 0.12 0.12 0.14 rg 50 370 Td (JavaScript, Java, HTML, CSS.) Tj ET
@@ -51,5 +51,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-2410
+2415
 %%EOF

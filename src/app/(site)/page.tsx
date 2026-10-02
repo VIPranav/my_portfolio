@@ -1,6 +1,5 @@
 import Hero from "@/components/home/Hero";
 import ScrollStory from "@/components/home/ScrollStory";
-import BentoGrid from "@/components/home/BentoGrid";
 import FeaturedWork from "@/components/home/FeaturedWork";
 import StatsStrip from "@/components/home/StatsStrip";
 import CtaBanner from "@/components/home/CtaBanner";
@@ -12,7 +11,6 @@ export default async function Home() {
     <>
       <Hero />
       <ScrollStory />
-      <BentoGrid />
       <FeaturedWork projects={projects.filter((p) => p.featured).slice(0, 3)} />
       <StatsStrip />
       <CtaBanner />

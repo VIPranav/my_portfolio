@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
+import PageWarpTitle from "@/components/ui/PageWarpTitle";
 import CtaBanner from "@/components/home/CtaBanner";
 export const metadata: Metadata = {
   title: "About",
@@ -12,11 +13,7 @@ export default function About() {
     <>
       <div className="container page-section">
         <p className="eyebrow">A LITTLE ABOUT ME</p>
-        <h1 className="page-title">
-          One curious mind.
-          <br />
-          <span className="muted">A few different lenses.</span>
-        </h1>
+        <PageWarpTitle text={"One curious mind.\nA few different lenses."} />
         <div className="about-grid">
           <div
             className="portrait-placeholder"

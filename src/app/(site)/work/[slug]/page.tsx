@@ -7,6 +7,7 @@ import { getAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import Gallery from "@/components/work/Gallery";
 import ModelViewer from "@/components/work/ModelViewer";
+import PageWarpTitle from "@/components/ui/PageWarpTitle";
 export const revalidate = 60;
 export async function generateStaticParams() {
   return (await getProjects()).map((p) => ({ slug: p.slug }));
@@ -63,7 +64,7 @@ export default async function CaseStudy({
         <Link href="/work" className="text-link">
           ← All work
         </Link>
-        <h1 className="page-title">{project.title}</h1>
+        <PageWarpTitle text={project.title} />
         <p className="page-lead">{project.summary}</p>
       </div>
       <div className="case-cover">

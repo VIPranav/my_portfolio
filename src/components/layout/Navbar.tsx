@@ -3,7 +3,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
 const links = [
   ["Work", "/work"],
   ["About", "/about"],
@@ -37,7 +36,6 @@ export default function Navbar() {
           {items}
         </nav>
         <div className="nav-actions">
-          <ThemeToggle />
           <Link href="/contact" className="hire-button">
             Hire me <span aria-hidden="true">↗</span>
           </Link>

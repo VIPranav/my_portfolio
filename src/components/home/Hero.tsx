@@ -1,12 +1,7 @@
 "use client";
-import dynamic from "next/dynamic";
+import HeroVector from "./HeroVector";
 import WarpText from "./WarpText";
-import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
-const Scene = dynamic(() => import("@/components/three/Scene"), {
-  ssr: false,
-  loading: () => <HeroPoster />,
-});
 export function HeroPoster() {
   return (
     <div className="hero-poster">
@@ -16,28 +11,10 @@ export function HeroPoster() {
   );
 }
 export default function Hero() {
-  const [enabled, setEnabled] = useState(false);
-  useEffect(() => {
-    const media = matchMedia("(prefers-reduced-motion: reduce)");
-    const check = () => {
-      const connection = navigator as Navigator & {
-        connection?: { saveData?: boolean };
-      };
-      setEnabled(
-        !media.matches &&
-          navigator.hardwareConcurrency > 4 &&
-          innerWidth >= 768 &&
-          !connection.connection?.saveData,
-      );
-    };
-    check();
-    media.addEventListener("change", check);
-    return () => media.removeEventListener("change", check);
-  }, []);
   return (
     <section className="hero dark-section">
-      <div className="hero-scene" aria-hidden="true">
-        {enabled ? <Scene /> : <HeroPoster />}
+      <div className="hero-scene">
+        <HeroVector />
       </div>
       <div className="hero-copy">
         <p className="eyebrow">
@@ -45,7 +22,7 @@ export default function Hero() {
         </p>
         <h1>
           <WarpText
-            text={"Pranav VP.\nDesign that ships."}
+            text={"Pranav VP.\nBetween Design & Code"}
             color="#f8f5ff"
             warpStrength={0.08}
             warpScale={1.7}

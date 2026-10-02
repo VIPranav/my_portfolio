@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logoutAction } from "@/actions/admin";
-import ThemeToggle from "@/components/layout/ThemeToggle";
 export default function Sidebar() {
   const path = usePathname();
   return (
@@ -28,7 +27,6 @@ export default function Sidebar() {
           </Link>
         ))}
       </nav>
-      <ThemeToggle />
       <form action={logoutAction}>
         <button className="text-button">Sign out</button>
       </form>

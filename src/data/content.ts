@@ -93,6 +93,7 @@ export const skillGroups = [
       ["CSS", "FOUNDATIONAL"],
     ],
   },
+  { name: "Art", skills: [["Art", "PROFICIENT"]] },
   {
     name: "Video & 3D",
     skills: [

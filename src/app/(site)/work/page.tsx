@@ -3,6 +3,7 @@ import { getProjects } from "@/lib/content";
 import { projectTypeSchema } from "@/lib/validators";
 import ProjectGrid from "@/components/work/ProjectGrid";
 import FilterPills from "@/components/work/FilterPills";
+import PageWarpTitle from "@/components/ui/PageWarpTitle";
 export const metadata: Metadata = {
   title: "Work",
   description:
@@ -21,7 +22,7 @@ export default async function Work({
   return (
     <div className="container page-section">
       <p className="eyebrow">THE SELECTED COLLECTION</p>
-      <h1 className="page-title">Made with intention.</h1>
+      <PageWarpTitle text="Made with intention." />
       <p className="page-lead">
         A little design. A little code. A lot of curiosity.
       </p>

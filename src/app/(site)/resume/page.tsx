@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PrintButton from "@/components/ui/PrintButton";
+import PageWarpTitle from "@/components/ui/PageWarpTitle";
 import { getSettings, getSkills } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Résumé",
@@ -18,7 +19,7 @@ export default async function Resume() {
           </a>
         )}
       </div>
-      <h1 className="page-title">Pranav VP</h1>
+      <PageWarpTitle text="Pranav VP" />
       <p className="page-lead">Design & development</p>
       {settings.email && <p>{settings.email}</p>}
       <section>

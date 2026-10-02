@@ -27,10 +27,9 @@ export default function Scene() {
         fallback={<HeroPoster />}
       >
         <PerformanceMonitor onDecline={() => setDpr(1)} />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[3, 4, 3]} intensity={5} color="#9fc5ff" />
-        <pointLight position={[-4, 0, 2]} intensity={35} color="#4569ff" />
-        <pointLight position={[3, -3, 0]} intensity={30} color="#c1abff" />
+        <ambientLight intensity={1.4} />
+        <directionalLight position={[3, 4, 5]} intensity={3} color="#ffffff" />
+        <pointLight position={[-4, 0, 2]} intensity={12} color="#58b4ee" />
         <HeroObject />
       </Canvas>
     </SceneBoundary>
