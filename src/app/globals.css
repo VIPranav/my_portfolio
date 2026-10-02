@@ -93,6 +93,37 @@ button {
 .section {
   padding: 112px 0;
 }
+.site-shell > main {
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.35),
+    transparent 160px,
+    transparent calc(100% - 160px),
+    rgb(0 0 0 / 0.65)
+  );
+}
+.site-shell > main > section {
+  position: relative;
+  isolation: isolate;
+}
+.site-shell > main > section + section::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 96px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+        to right,
+        transparent,
+        rgb(255 255 255 / 0.1) 25%,
+        rgb(255 255 255 / 0.1) 75%,
+        transparent
+      )
+      center top / min(1120px, calc(100% - 40px)) 1px no-repeat,
+    linear-gradient(rgb(0 0 0 / 0.65), transparent);
+}
 .page-section {
   padding-top: 90px;
   padding-bottom: 110px;
@@ -230,6 +261,30 @@ p {
   background: var(--glass);
   padding: 32px;
   backdrop-filter: blur(20px);
+}
+.site-shell .glass-card {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+  backdrop-filter: none;
+}
+.site-shell .glass-card > .floating-glass {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit !important;
+}
+.floating-glass .glass-surface__content {
+  display: none;
+}
+.site-shell .floating-glass.glass-surface--fallback {
+  background: rgb(255 255 255 / 0.06);
+  border-color: rgb(255 255 255 / 0.16);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.2),
+    inset 0 -1px 0 rgb(255 255 255 / 0.08),
+    0 16px 48px rgb(0 0 0 / 0.2);
 }
 .pill {
   display: inline-flex;
@@ -769,10 +824,31 @@ p {
   margin-bottom: 30px;
 }
 .site-footer {
+  position: relative;
   padding: 56px 0 20px;
-  background: transparent;
+  background: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0.88),
+    rgb(0 0 0 / 0.65) 45%,
+    rgb(0 0 0 / 0.8)
+  );
+  box-shadow: 0 -32px 64px -32px rgb(0 0 0 / 0.8);
   color: var(--muted);
   font-size: 12px;
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(255 255 255 / 0.1) 25%,
+    rgb(255 255 255 / 0.1) 75%,
+    transparent
+  );
 }
 .footer-grid {
   display: grid;
@@ -1639,6 +1715,12 @@ th {
   body {
     background: white;
     color: black;
+  }
+  .site-shell > main {
+    background: none;
+  }
+  .site-shell > main > section + section::before {
+    display: none;
   }
   .resume {
     width: 100%;

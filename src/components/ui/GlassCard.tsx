@@ -1,3 +1,4 @@
+import FloatingGlass from "@/components/ui/FloatingGlass";
 import { cn } from "@/lib/utils";
 export function GlassCard({
   children,
@@ -6,6 +7,7 @@ export function GlassCard({
 }: React.ComponentPropsWithoutRef<"div">) {
   return (
     <div className={cn("glass-card", className)} {...props}>
+      <FloatingGlass />
       {children}
     </div>
   );

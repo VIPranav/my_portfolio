@@ -1,3 +1,4 @@
+import FloatingGlass from "@/components/ui/FloatingGlass";
 import type { Metadata } from "next";
 import { getSkills } from "@/lib/content";
 import PageWarpTitle from "@/components/ui/PageWarpTitle";
@@ -23,6 +24,7 @@ export default async function Skills() {
       <div className="skills-grid">
         {groups.map((g) => (
           <section className="glass-card" id={toSectionId(g.name)} key={g.id}>
+            <FloatingGlass />
             <h2>{g.name}</h2>
             {g.skills.map((s) => (
               <div className="skill-row" key={s.id}>

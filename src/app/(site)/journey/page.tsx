@@ -1,3 +1,4 @@
+import FloatingGlass from "@/components/ui/FloatingGlass";
 import type { Metadata } from "next";
 import { getMilestones } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
@@ -24,6 +25,7 @@ export default async function Journey() {
             <article className="timeline-item">
               <span className="timeline-year">{m.year}</span>
               <div className="glass-card">
+                <FloatingGlass />
                 <h2>{m.title}</h2>
                 <p>{m.description}</p>
               </div>

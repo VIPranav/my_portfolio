@@ -1,4 +1,5 @@
 "use client";
+import FloatingGlass from "@/components/ui/FloatingGlass";
 import { useActionState } from "react";
 import { sendMessage } from "@/actions/contact";
 import { projectTypes, typeLabels } from "@/data/content";
@@ -7,6 +8,7 @@ export default function ContactForm() {
   if (state.ok)
     return (
       <div className="glass-card success-state" role="status">
+        <FloatingGlass />
         <span>✓</span>
         <h2>Message received.</h2>
         <p>Thanks, I’ll reply within 48 hours.</p>
@@ -14,6 +16,7 @@ export default function ContactForm() {
     );
   return (
     <form action={action} className="glass-card contact-form">
+      <FloatingGlass />
       <div className="form-grid">
         {[
           ["name", "Your name", "text"],

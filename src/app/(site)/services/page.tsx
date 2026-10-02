@@ -1,3 +1,4 @@
+import FloatingGlass from "@/components/ui/FloatingGlass";
 import type { Metadata } from "next";
 import { Code2, Layers, PenTool, Film } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
@@ -43,6 +44,7 @@ export default function Services() {
           const Symbol = Icon as typeof Code2;
           return (
             <article key={String(title)} className="glass-card">
+              <FloatingGlass />
               <Symbol size={32} />
               <h2>{String(title)}</h2>
               <p>{String(description)}</p>
